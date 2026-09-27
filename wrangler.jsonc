@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dharah-api",
+  "main": "index.js",
+  "compatibility_date": "2025-09-01",
+  "observability": { "enabled": true },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "dharah",
+      "database_id": "5d67b784-41b3-4c13-af99-15eaeafcb812",
+      "migrations_dir": "migrations"
+    }
+  ],
+
+  "triggers": { "crons": ["*/30 * * * *"] },
+
+  "vars": {
+    "API_URL": "https://api.dharah.us.ci",
+    "CUSTOMER_URL": "https://www.dharah.us.ci",
+    "ALLOWED_ORIGINS": "https://www.dharah.ng,https://dharah.ng,https://vendor.dharah.ng,https://riders.dharah.ng,https://admin.dharah.ng,https://kyc.dharah.ng,https://shipping.dharah.ng,https://finance.dharah.ng,https://www.dharah.us.ci,https://dharah.us.ci,https://vendor.dharah.us.ci,https://riders.dharah.us.ci,https://admin.dharah.us.ci,https://kyc.dharah.us.ci,https://shipping.dharah.us.ci,https://finance.dharah.us.ci"
+  },
+
+  "routes": [{ "pattern": "api.dharah.us.ci", "custom_domain": true }]
+}
